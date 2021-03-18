@@ -23,5 +23,11 @@
 /* Settings Menu       */
 /***********************/
 
-.dnd5e-extender-settings {
+.dnd5e-extender-settings table td {
+    padding: 0.25em;
+}
+
+.dnd5e-extender section.tab[data-tab="skills"] select {
+    height: 26px;
+    width: 100%;
 }
