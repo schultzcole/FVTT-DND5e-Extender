@@ -1,0 +1,13 @@
+<tr>
+    <td>
+        <input type="text" name="abilities.{{index}}.title" value="{{item.title}}" data-dtype="String">
+    </td>
+    <td>
+        <input type="text" name="abilities.{{index}}.abbreviation" value="{{item.abbreviation}}" data-dtype="String">
+    </td>
+    <td class="textCenter">
+        <button type="button" title="{{localize 'Delete'}}" class='delete-row' data-row-index="{{index}}">
+            <i class="fa fa-trash"></i>
+        </button>
+    </td>
+</tr>

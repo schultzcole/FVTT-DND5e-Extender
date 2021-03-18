@@ -1,0 +1,23 @@
+<tr>
+    <td>
+        <input type="text" name="skills.{{index}}.title" value="{{item.title}}" data-dtype="String">
+    </td>
+    <td>
+        <input type="text" name="skills.{{index}}.abbreviation" value="{{item.abbreviation}}" data-dtype="String">
+    </td>
+    <td>
+        <select name="skills.{{index}}.ability" data-type="String" value="{{item.ability}}">
+            {{#select item.ability}}
+                <option value="">{{localize "DND5E.None"}}</option>
+                {{#each abilities as |abl a|}}
+                    <option value="{{a}}">{{abl}}</option>
+                {{/each}}
+            {{/select}}
+        </select>
+    </td>
+    <td class="textCenter">
+        <button type="button" title="{{localize 'Delete'}}" class='delete-row' data-row-index="{{index}}">
+            <i class="fa fa-trash"></i>
+        </button>
+    </td>
+</tr>

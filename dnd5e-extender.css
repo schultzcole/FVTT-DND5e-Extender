@@ -1,0 +1,27 @@
+/***********************/
+/* Character Sheets    */
+/***********************/
+
+.dnd5e-extender .dnd5e.sheet.actor.character .tab.attributes {
+    align-items: start;
+    overflow-y: auto;
+}
+
+.dnd5e-extender .dnd5e.sheet.actor.character .ability-scores,
+.dnd5e-extender .dnd5e.sheet.actor.character .skills-list {
+    height: unset;
+    min-height: 436px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.dnd5e-extender .dnd5e.sheet.actor.character section.center-pane {
+    overflow-y: unset;
+}
+
+/***********************/
+/* Settings Menu       */
+/***********************/
+
+.dnd5e-extender-settings {
+}

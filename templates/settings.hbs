@@ -1,0 +1,22 @@
+<form class="{{classes}}" autocomplete="off">
+    <div>
+        <h2>{{localize 'EXT5E.settings.AbilitiesSkills'}}</h2>
+        <nav class="sheet-tabs tabs">
+          <a class='item' data-tab='abilities'>{{localize 'EXT5E.settings.Abilities'}}</a>
+          <a class='item' data-tab='skills'>{{localize 'EXT5E.settings.Skills'}}</a>
+        </nav>
+        <section class='tab' data-tab='abilities'>
+            {{> 'modules/dnd5e-extender/templates/abilities/settings-abilities.hbs' abilities=settings.customAbilities}}
+        </section>
+        <section class='tab' data-tab='skills'>
+            {{> 'modules/dnd5e-extender/templates/skills/settings-skills.hbs' skills=settings.customSkills abilities=settings.abilities}}
+        </section>
+    </div>
+
+    <hr />
+
+    <button type='submit'>{{localize 'Save Changes'}}</button>
+    <!--{{> 'modules/dnd5e-extender/templates/settings-submit.hbs'}}-->
+    <!-- TODO investigate risks after custom ability scores/skills are implemented and see if these warnings are still necessary -->
+
+</form>

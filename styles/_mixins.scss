@@ -1,4 +1,4 @@
-@import './variables';
+@import 'variables';
 
 @mixin spaced($spacing: $space) {
   > :not(:last-child) {
