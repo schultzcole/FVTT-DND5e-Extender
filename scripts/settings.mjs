@@ -124,8 +124,6 @@ export class Dnd5eExtendersSettings extends FormApplication {
     }
 
     async _updateObject(ev, formData) {
-        const customAbilities = game.settings.get(MODULE_ID, MY_SETTINGS.CUSTOM_ABILITIES);
-        const customSkills = game.settings.get(MODULE_ID, MY_SETTINGS.CUSTOM_SKILLS);
         const data = expandObject(formData);
 
         // TODO evaluate necessity of warnings after custom ability scores and skills are implemented
@@ -141,11 +139,8 @@ export class Dnd5eExtendersSettings extends FormApplication {
         const abilitiesArray = Object.values(data.abilities || {});
         const skillsArray = Object.values(data.skills || {});
 
-        const newCustomAbilities = abilitiesArray.length ? mergeObject(customAbilities, abilitiesArray) : abilitiesArray;
-        const newCustomSkills = skillsArray.length ? mergeObject(customSkills, skillsArray) : skillsArray;
-
-        await game.settings.set(MODULE_ID, MY_SETTINGS.CUSTOM_ABILITIES, newCustomAbilities);
-        await game.settings.set(MODULE_ID, MY_SETTINGS.CUSTOM_SKILLS, newCustomSkills);
+        await game.settings.set(MODULE_ID, MY_SETTINGS.CUSTOM_ABILITIES, abilitiesArray);
+        await game.settings.set(MODULE_ID, MY_SETTINGS.CUSTOM_SKILLS, skillsArray);
 
         location.reload();
     }
