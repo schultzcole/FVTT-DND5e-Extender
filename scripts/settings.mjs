@@ -104,10 +104,12 @@ export class Dnd5eExtendersSettings extends FormApplication {
             const newRow = $(await renderTemplate(TEMPLATES[table].tableRow, newRowData));
             // render a new row at the end of tbody
             tbodyElement.append(newRow);
+            this.setPosition({ height: "auto" });
         };
 
         const handleDeleteRowClick = (currentTarget) => {
             currentTarget.parentsUntil("tbody").remove();
+            this.setPosition({ height: "auto" });
         };
 
         html.on("click", (e) => {
