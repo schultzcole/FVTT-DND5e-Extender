@@ -1,5 +1,4 @@
 import { MY_SETTINGS, MODULE_ID, MODULE_ABBREV, TEMPLATES } from "./constants.mjs";
-import { debugLog } from "./helpers.mjs";
 
 export const registerSettings = function () {
     // debug use
