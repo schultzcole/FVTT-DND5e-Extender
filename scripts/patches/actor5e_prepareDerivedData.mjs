@@ -1,8 +1,10 @@
 import { libWrapper } from '../../lib/libWrapper/shim.js';
-import { FLAGS, MODULE_ABBREV, MODULE_ID, SETTINGS } from '../constants.mjs';
+import { FLAGS, MODULE_ID, SETTINGS } from '../constants.mjs';
 
+/**
+ * Injects custom abilities and skills into the actor's data, using saved data from flags if available (otherwise reverting to default)
+ */
 export default function patchActor5e_prepareDerivedData() {
-    console.log(MODULE_ABBREV, " | about to patch prepareDerivedData");
     libWrapper.register(MODULE_ID, "CONFIG.Actor.entityClass.prototype.prepareDerivedData", function patchedPrepareDerivedData(wrapped, ...args) {
         const customAbilities = game.settings.get(MODULE_ID, SETTINGS.CUSTOM_ABILITIES);
         const customSkills = game.settings.get(MODULE_ID, SETTINGS.CUSTOM_SKILLS);

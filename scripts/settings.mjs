@@ -1,9 +1,9 @@
 import { SETTINGS, MODULE_ID, TEMPLATES, MODULE_ABBREV } from './constants.mjs';
 
+/**
+ * Registers the settings that D&D5e extender uses
+ */
 export function registerSettings() {
-    // debug use
-    // CONFIG[MODULE_ID] = { debug: true };
-
     game.settings.registerMenu(MODULE_ID, "menu", {
         name: "D&D5e Extender Settings",
         label: "Extender Settings",
@@ -29,6 +29,9 @@ export function registerSettings() {
     });
 }
 
+/**
+ * Custom settings window in which the user can define custom ability scores and skills
+ */
 export class Dnd5eExtendersSettings extends FormApplication {
     constructor(object = {}, options) {
         super(object, options);
@@ -91,11 +94,15 @@ export class Dnd5eExtendersSettings extends FormApplication {
             const newRow = $(await renderTemplate(TEMPLATES[table].tableRow, newRowData));
             // render a new row at the end of tbody
             tbodyElement.append(newRow);
+
+            // adjust the height of the application to account for the new row
             this.setPosition({ height: "auto" });
         };
 
         const handleDeleteRowClick = (currentTarget) => {
             currentTarget.parentsUntil("tbody").remove();
+
+            // adjust the height of the application to account for the removed row
             this.setPosition({ height: "auto" });
         };
 

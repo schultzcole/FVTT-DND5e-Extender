@@ -14,7 +14,6 @@ export const TEMPLATES = {
     },
 };
 
-/** @enum {string} */
 export const SETTINGS = {
     CUSTOM_ABILITIES: "custom-abilities",
     CUSTOM_SKILLS: "custom-skills",
