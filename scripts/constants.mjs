@@ -18,7 +18,6 @@ export const TEMPLATES = {
 export const SETTINGS = {
     CUSTOM_ABILITIES: "custom-abilities",
     CUSTOM_SKILLS: "custom-skills",
-    DEBUG_MODE: "debug-mode",
 };
 
 export const FLAGS = {

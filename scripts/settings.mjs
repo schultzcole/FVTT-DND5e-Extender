@@ -12,18 +12,6 @@ export function registerSettings() {
         restricted: true,
     });
 
-    game.settings.register(MODULE_ID, SETTINGS.DEBUG_MODE, {
-        name: `${MODULE_ABBREV}.settings.debug.Label`,
-        hint: `${MODULE_ABBREV}.settings.debug.Hint`,
-        scope: "client",
-        config: true,
-        type: Boolean,
-        default: false,
-        onChange: (value) => {
-            CONFIG[MODULE_ID] = { debug: value };
-        },
-    });
-
     //// EXTENSIONS
 
     game.settings.register(MODULE_ID, SETTINGS.CUSTOM_ABILITIES, {
