@@ -15,8 +15,13 @@ export const TEMPLATES = {
 };
 
 /** @enum {string} */
-export const MY_SETTINGS = {
-    CUSTOM_ABILITIES: 'custom-abilities',
-    CUSTOM_SKILLS: 'custom-skills',
-    DEBUG_MODE: 'debug-mode',
+export const SETTINGS = {
+    CUSTOM_ABILITIES: "custom-abilities",
+    CUSTOM_SKILLS: "custom-skills",
+    DEBUG_MODE: "debug-mode",
 };
+
+export const FLAGS = {
+    SAVED_ABILITIES: "saved-abilities",
+    SAVED_SKILLS: "saved-skills",
+}

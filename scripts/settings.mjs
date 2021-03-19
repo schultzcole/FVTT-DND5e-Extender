@@ -1,6 +1,6 @@
-import { MY_SETTINGS, MODULE_ID, MODULE_ABBREV, TEMPLATES } from "./constants.mjs";
+import { SETTINGS, MODULE_ID, MODULE_ABBREV, TEMPLATES } from "./constants.mjs";
 
-export const registerSettings = function () {
+export function registerSettings() {
     // debug use
     // CONFIG[MODULE_ID] = { debug: true };
 
@@ -12,7 +12,7 @@ export const registerSettings = function () {
         restricted: true,
     });
 
-    game.settings.register(MODULE_ID, MY_SETTINGS.DEBUG_MODE, {
+    game.settings.register(MODULE_ID, SETTINGS.DEBUG_MODE, {
         name: `${MODULE_ABBREV}.settings.debug.Label`,
         hint: `${MODULE_ABBREV}.settings.debug.Hint`,
         scope: "client",
@@ -26,20 +26,20 @@ export const registerSettings = function () {
 
     //// EXTENSIONS
 
-    game.settings.register(MODULE_ID, MY_SETTINGS.CUSTOM_ABILITIES, {
+    game.settings.register(MODULE_ID, SETTINGS.CUSTOM_ABILITIES, {
         scope: "world",
         config: false,
         type: Object,
         default: [],
     });
 
-    game.settings.register(MODULE_ID, MY_SETTINGS.CUSTOM_SKILLS, {
+    game.settings.register(MODULE_ID, SETTINGS.CUSTOM_SKILLS, {
         scope: "world",
         config: false,
         type: Object,
         default: [],
     });
-};
+}
 
 export class Dnd5eExtendersSettings extends FormApplication {
     constructor(object = {}, options) {
@@ -70,8 +70,8 @@ export class Dnd5eExtendersSettings extends FormApplication {
     getData() {
         let data = super.getData();
 
-        const customAbilities = game.settings.get(MODULE_ID, MY_SETTINGS.CUSTOM_ABILITIES);
-        const customSkills = game.settings.get(MODULE_ID, MY_SETTINGS.CUSTOM_SKILLS);
+        const customAbilities = game.settings.get(MODULE_ID, SETTINGS.CUSTOM_ABILITIES);
+        const customSkills = game.settings.get(MODULE_ID, SETTINGS.CUSTOM_SKILLS);
 
         data.settings = {
             customSkills,
@@ -137,11 +137,11 @@ export class Dnd5eExtendersSettings extends FormApplication {
         //     throw Error(errorMessage);
         // }
 
-        const abilitiesArray = Object.values(data.abilities || {});
-        const skillsArray = Object.values(data.skills || {});
+        const abilitiesArray = Object.values(data.abilities ?? {});
+        const skillsArray = Object.values(data.skills ?? {});
 
-        await game.settings.set(MODULE_ID, MY_SETTINGS.CUSTOM_ABILITIES, abilitiesArray);
-        await game.settings.set(MODULE_ID, MY_SETTINGS.CUSTOM_SKILLS, skillsArray);
+        await game.settings.set(MODULE_ID, SETTINGS.CUSTOM_ABILITIES, abilitiesArray);
+        await game.settings.set(MODULE_ID, SETTINGS.CUSTOM_SKILLS, skillsArray);
 
         location.reload();
     }
