@@ -31,3 +31,14 @@
     height: 26px;
     width: 100%;
 }
+
+.dnd5e-extender-settings .warning-list {
+    list-style: none;
+    padding: 0;
+}
+
+.dnd5e-extender-settings .warning-list input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+}

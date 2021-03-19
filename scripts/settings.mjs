@@ -1,4 +1,4 @@
-import { SETTINGS, MODULE_ID, MODULE_ABBREV, TEMPLATES } from "./constants.mjs";
+import { SETTINGS, MODULE_ID, TEMPLATES, MODULE_ABBREV } from './constants.mjs';
 
 export function registerSettings() {
     // debug use
@@ -115,15 +115,14 @@ export class Dnd5eExtendersSettings extends FormApplication {
     async _updateObject(ev, formData) {
         const data = expandObject(formData);
 
-        // TODO evaluate necessity of warnings after custom ability scores and skills are implemented
         // if any of our warnings are not checked, throw
-        // if (Object.values(data.warning).includes(false)) {
-        //     const errorMessage = game.i18n.localize(`${MODULE_ABBREV}.AllWarnings`);
-        //
-        //     ui.notifications.error(errorMessage);
-        //
-        //     throw Error(errorMessage);
-        // }
+        if (Object.values(data.warning).includes(false)) {
+            const errorMessage = game.i18n.localize(`${MODULE_ABBREV}.AllWarnings`);
+
+            ui.notifications.warn(errorMessage);
+
+            throw Error(errorMessage);
+        }
 
         const abilitiesArray = Object.values(data.abilities ?? {});
         const skillsArray = Object.values(data.skills ?? {});

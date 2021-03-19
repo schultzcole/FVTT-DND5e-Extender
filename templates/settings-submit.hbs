@@ -1,21 +1,13 @@
 <div>
     <h2>{{localize 'EXT5E.warnings.UnderstandRisks'}}</h2>
 
-    <p>{{localize 'EXT5E.warnings.RiskHint'}}</p>
+    <p>{{{localize 'EXT5E.warnings.RiskHint'}}}</p>
 
-    <p>{{localize 'EXT5E.warnings.BackupFirst'}}</p>
+    <p>{{{localize 'EXT5E.warnings.MoreInfo'}}}</p>
 
     <h3>{{localize 'EXT5E.warnings.IUnderstand'}}</h3>
 
     <ul class="warning-list">
-        <li>
-            <label>
-                <input type='checkbox' data-dtype='boolean' name='warning.brick' {{checked
-                    settings.warningConfirmBrick}} />
-                {{localize 'EXT5E.warnings.Brick'}}
-            </label>
-        </li>
-
         <li>
             <label>
                 <input type='checkbox' data-dtype='boolean' name='warning.update' {{checked
