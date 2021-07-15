@@ -9,7 +9,7 @@ import { MODULE_ID, SETTINGS } from '../constants.mjs';
  * included in the actual data after being imported.
  */
 export default function patchEntityCollection_importFromCollection() {
-    libWrapper.register(MODULE_ID, "EntityCollection.prototype.importFromCollection", function(wrapped, ...args) {
+    libWrapper.register(MODULE_ID, "WorldCollection.prototype.importFromCollection", function(wrapped, ...args) {
         const origUpdateData = args[2];
 
         const overrideUpdateData = {};
